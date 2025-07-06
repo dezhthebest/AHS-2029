@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AHS 2029 Freshman Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #8b0000;
+      color: white;
+    }
+    header {
+      background-color: black;
+      padding: 1rem;
+      text-align: center;
+    }
+    header img {
+      height: 120px;
+    }
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    footer {
+      text-align: center;
+      background: black;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .discord {
+      background-color: #5865F2;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #222;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="auburn-logo.png" alt="Auburn Knights Logo" />
+    <h1>AHS 2029 Freshman Hub</h1>
+  </header>
+
+  <nav>
+    <a href="#classes">Classes</a>
+    <a href="#forum">Q&A Forum</a>
+    <a href="#school-info">School Info</a>
+    <a href="#discord">Discord</a>
+  </nav>
+
+  <main>
+    <section id="classes" class="section">
+      <h2>📚 Freshman Classes</h2>
+      <ul>
+        <li>📐 Math: Integrated Math 1, Integrated Math 2, Gifted Algebra, Gifted College Algebra</li>
+        <li>📖 English: English 9, Honors English, Gifted English 9, Gifted Rhetoric and Fiction</li>
+        <li>🧬 Science: Biology, Honors Biology, Gifted Advanced Biology, Gifted Chemistry</li>
+        <li>🌍 Social Studies: Global Studies, AP Human Geography, AP US Gov, Gifted World Affairs</li>
+        <li>🈹 Languages: Spanish, French, Mandarin (Reg + Gifted)</li>
+        <li>⚙️ Electives: Band, ROTC, Tech, Art, Acting, PE, PLTW</li>
+        <li>🎭 CAPA: Theater, Dance, Choir, Art, Media, Jazz, Ensemble</li>
+      </ul>
+    </section>
+
+    <section id="forum" class="section">
+      <h2>💬 Q&A Forum</h2>
+      <p>Post your questions or answers for AHS 2029 Freshman only. Everyone with Wi-Fi or data can post here.</p>
+      <div>
+        <input type="text" id="username" placeholder="Your name (optional)" />
+        <textarea id="question" placeholder="Type your question..." rows="4"></textarea>
+        <button onclick="postQuestion()">Post Question</button>
+        <ul id="forum-list"></ul>
+      </div>
+    </section>
+
+    <section id="school-info" class="section">
+      <h2>🏫 Official School Info</h2>
+      <p>Visit the <a href="https://auburn.rps205.com" target="_blank" style="color: #ffd700;">Auburn High School Official Site</a></p>
+    </section>
+
+    <section id="discord" class="discord">
+      <h2>🎉 Join Our Discord</h2>
+      <p>Click below to join the AHS 2029 Discord server and connect with other freshmen!</p>
+      <a href="https://discord.gg/DbhcPAMb" target="_blank" style="color: white; font-weight: bold; text-decoration: underline;">Join Discord Server</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Deshawn Strong — AHS Class of 2029</p>
+  </footer>
+
+  <script type="module">
+    // Firebase config placeholder
+    const postQuestion = () => {
+      const name = document.getElementById("username").value;
+      const question = document.getElementById("question").value;
+      const list = document.getElementById("forum-list");
+      if (name && question) {
+        const item = document.createElement("li");
+        item.textContent = `${name}: ${question}`;
+        list.appendChild(item);
+        document.getElementById("question").value = '';
+      }
+    };
+  </script>
+</body>
+</html>
